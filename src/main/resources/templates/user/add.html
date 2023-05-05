@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/> <!-- Note the closing '/' character -->
+    <title>Title</title>
+</head>
+<body>
+
+<block th:if="${error}">
+    <h1 th:text="${error}"></h1>
+</block>
+    <form method="POST" action="/user">
+        <div class="form-group">
+            <label for="username">Enter your username:</label>
+            <input type="text" id="username" th:value="${username}" name="username">
+        </div>
+        <div class="form-group">
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" th:value="${email}" name="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="password">
+        </div>
+        <div class="form-group">
+            <label for="pwd2">Confirm Password:</label>
+            <input type="password" id="pwd2" name="verify">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
+
+</body>
+</html>
